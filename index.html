@@ -1,18 +1,32 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Load the latest version of TensorFlow.js -->
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
     <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
   </head>
   <body>
-    <div id="console"></div>
-    <!-- Add an image that we will use to test -->
-    <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
-    <button id="class-a">Add A</button>
-    <button id="class-b">Add B</button>
-    <button id="class-c">Add C</button>
-    <button id="no-action">No Action</button> 
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+      <span class="navbar-brand mb-0 h1" style="white-space:normal;">Teachable Machine with TensorFlow, mobilenet, and KNN Classification</span>
+      <span class="navbar-brand mb-0 h1"><a class="text-light" href="#">@darchuletajr</a></span>
+    </nav>
+    <div class="container my-5 text-center bg-light">
+      <div class="row">
+        <!-- Add an image that we will use to test -->
+        <video class="col border" autoplay playsinline muted id="webcam" width="224" height="224"></video>
+      </div>
+      <div class="row">
+        <button class="col-sm" id="class-a">Add A</button>
+        <button class="col-sm" id="class-b">Add B</button>
+        <button class="col-sm" id="class-c">Add C</button>
+        <button class="col-sm" id="no-action">No Action</button> 
+      </div>
+      <div class="row">
+        <div id="console" class="col text-center"></div>
+      </div>
+    </div>
     <!-- Load index.js after the content of the page -->
     <script src="index.js"></script>
   </body>

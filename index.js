@@ -14,7 +14,7 @@ async function setupWebcam() {
           webcamElement.srcObject = stream;
           webcamElement.addEventListener('loadeddata',  () => resolve(), false);
         },
-        error => reject());
+        error => reject(error));
     } else {
       reject();
     }
@@ -28,6 +28,8 @@ async function app() {
   net = await mobilenet.load();
   console.log('Sucessfully loaded model');
 
+  // wait for webcam to load
+  console.log('loading webcam...')
   await setupWebcam();
 
   // Reads an image from the webcam and associates it with a specific class
